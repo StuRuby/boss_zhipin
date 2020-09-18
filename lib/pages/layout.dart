@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:boss_zhipin/pages/chat/chat_list.dart';
 import 'package:boss_zhipin/pages/company/company_list.dart';
-import 'package:boss_zhipin/pages/chat/chat_list.dart';
 
 class AppLayout extends StatefulWidget {
   @override
@@ -42,7 +41,11 @@ class _AppLayout extends State<AppLayout> {
         ],
       ),
       body: Center(
-        child: _appViews[_selectedIndex],
+        child: Container(
+          decoration:
+              BoxDecoration(color: new Color.fromRGBO(245, 245, 245, 1)),
+          child: _appViews[_selectedIndex],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         // unselectedItemColor: new Color.fromRGBO(51, 51, 51, 1),

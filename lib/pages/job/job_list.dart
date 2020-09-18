@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:boss_zhipin/pages/job/job_item.dart';
+
 var items = new List<String>.generate(500, (index) => 'Item $index');
 
 class JobList extends StatefulWidget {
@@ -15,10 +17,7 @@ class _JobList extends State<JobList> {
       itemCount: items.length,
       // 列表项构造器
       itemBuilder: (context, index) {
-        return ListTile(
-          leading: Icon(Icons.phone),
-          title: Text('${items[index]}'),
-        );
+        return new JobItem();
       },
     );
   }
