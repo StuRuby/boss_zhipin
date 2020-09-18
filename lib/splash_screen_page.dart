@@ -2,6 +2,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:boss_zhipin/pages/layout.dart';
 
 class SplashScreenPage extends StatefulWidget {
   SplashScreenPage({Key key}) : super(key: key);
@@ -25,7 +26,7 @@ class _SplashScreenPage extends State<SplashScreenPage> {
             builder: (BuildContext context, Widget child) {
               return Opacity(
                 opacity: animation.value,
-                child: new Text('BOSS首页'),
+                child: AppLayout(),
               );
             },
           );
