@@ -103,7 +103,8 @@ class _JobItem extends State<JobItem> {
                   children: [
                     CircleAvatar(
                         radius: 14.0,
-                        backgroundImage: new AssetImage('images/avatar.jpeg')),
+                        backgroundImage:
+                            new AssetImage('assets/images/avatar.jpeg')),
                     Container(
                       margin: const EdgeInsets.only(left: 7.0),
                       child: Text(
