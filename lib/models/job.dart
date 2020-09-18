@@ -5,7 +5,6 @@ class Job {
   final String title;
   final String salary;
   final List<String> company;
-  final String info;
   final List<String> category;
   final List<String> tags;
   final User publisher;
@@ -15,21 +14,19 @@ class Job {
     this.title,
     this.salary,
     this.company,
-    this.info,
     this.category,
     this.tags,
     this.publisher,
   });
 
-  factory Job.fromJSON(Map<String, dynamic> json) {
+  factory Job.fromJSON(Job json) {
     return Job(
-      title: json['title'],
-      salary: json['salary'],
-      company: json['company'],
-      info: json['info'],
-      category: json['category'],
-      tags: json['tags'],
-      publisher: json['publisher'],
-    );
+        // title: json['title'],
+        title: json.title,
+        salary: json.salary,
+        company: json.company,
+        category: json.category,
+        tags: json.tags,
+        publisher: json.publisher);
   }
 }

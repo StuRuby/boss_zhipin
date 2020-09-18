@@ -9,11 +9,11 @@ class User {
     this.avatarUrl,
   });
 
-  factory User.fromJSON(Map<String, dynamic> json) {
+  factory User.fromJSON(User json) {
     return User(
-      name: json['name'],
-      job: json['job'],
-      avatarUrl: json['avatarUrl'],
+      name: json.name,
+      job: json.job,
+      avatarUrl: json.avatarUrl,
     );
   }
 }
