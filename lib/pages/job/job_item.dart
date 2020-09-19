@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:boss_zhipin/models/job.dart';
+
 class JobItem extends StatefulWidget {
+  JobItem({Key key, this.job}) : super(key: key);
+  final Job job;
   @override
   _JobItem createState() => new _JobItem();
 }
@@ -23,14 +27,14 @@ class _JobItem extends State<JobItem> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'GIS开发工程师',
+                widget.job.title,
                 style: TextStyle(
                     color: new Color.fromRGBO(45, 45, 45, 1),
                     fontSize: 20.0,
                     fontWeight: FontWeight.w700),
               ),
               Text(
-                '20-40K · 15薪',
+                widget.job.salary,
                 style: TextStyle(
                     color: new Color.fromRGBO(17, 164, 160, 1),
                     fontSize: 15.0,
@@ -41,13 +45,12 @@ class _JobItem extends State<JobItem> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: List<Widget>.generate(
-                3,
+                widget.job.tags.length,
                 (index) => Container(
                       margin: const EdgeInsets.only(right: 8.0),
                       child: RawChip(
                         label: Text(
-                          // '5年以上',
-                          KeyWords[index],
+                          widget.job.tags[index],
                           style: TextStyle(
                               color: new Color.fromRGBO(102, 102, 102, 1),
                               fontSize: 12.0,
@@ -59,40 +62,45 @@ class _JobItem extends State<JobItem> {
                     )),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                margin: const EdgeInsets.only(right: 8.0),
-                child: Text(
-                  '苏州科达科技',
-                  style: TextStyle(
-                      color: new Color.fromRGBO(41, 41, 41, 1),
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w500),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(right: 8.0),
-                child: Text(
-                  '上市公司',
-                  style: TextStyle(
-                      color: new Color.fromRGBO(41, 41, 41, 1),
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w500),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(right: 8.0),
-                child: Text(
-                  '10000人以上',
-                  style: TextStyle(
-                      color: new Color.fromRGBO(99, 99, 99, 1),
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w500),
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: List<Widget>.generate(
+                widget.job.company.length,
+                (index) => Container(
+                  margin: const EdgeInsets.only(right: 8.0),
+                  child: Text(
+                    widget.job.company[index],
+                    style: TextStyle(
+                        color: new Color.fromRGBO(41, 41, 41, 1),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
               )
-            ],
-          ),
+
+              // <Widget>[
+
+              //   Container(
+              //     margin: const EdgeInsets.only(right: 8.0),
+              //     child: Text(
+              //       '上市公司',
+              //       style: TextStyle(
+              //           color: new Color.fromRGBO(41, 41, 41, 1),
+              //           fontSize: 14.0,
+              //           fontWeight: FontWeight.w500),
+              //     ),
+              //   ),
+              //   Container(
+              //     margin: const EdgeInsets.only(right: 8.0),
+              //     child: Text(
+              //       '10000人以上',
+              //       style: TextStyle(
+              //           color: new Color.fromRGBO(99, 99, 99, 1),
+              //           fontSize: 14.0,
+              //           fontWeight: FontWeight.w500),
+              //     ),
+              //   )
+              // ],
+              ),
           Container(
             margin: const EdgeInsets.only(top: 5.0),
             child: Row(
@@ -108,7 +116,7 @@ class _JobItem extends State<JobItem> {
                     Container(
                       margin: const EdgeInsets.only(left: 7.0),
                       child: Text(
-                        '顾佳书 · 副总监',
+                        '${widget.job.publisher.name} · ${widget.job.publisher.job}',
                         style: TextStyle(
                             color: new Color.fromRGBO(64, 64, 64, 1),
                             fontSize: 14.0,

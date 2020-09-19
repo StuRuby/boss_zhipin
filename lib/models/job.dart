@@ -19,14 +19,14 @@ class Job {
     this.publisher,
   });
 
-  factory Job.fromJSON(Job json) {
+  factory Job.fromJSON(Map<String, dynamic> json) {
     return Job(
-        // title: json['title'],
-        title: json.title,
-        salary: json.salary,
-        company: json.company,
-        category: json.category,
-        tags: json.tags,
-        publisher: json.publisher);
+      title: json['title'],
+      salary: json['salary'],
+      company: new List<String>.from(json['company']),
+      category: new List<String>.from(json['category']),
+      tags: new List<String>.from(json['tags']),
+      publisher: User.fromJSON(json['publisher']),
+    );
   }
 }

@@ -12,7 +12,7 @@ class JobService {
   static Future<List<Job>> getJobData() async {
     List<Job> jobList = new List();
     String respString = await _getJobData();
-    final List<Job> resp = json.decode(respString);
+    final resp = json.decode(respString);
 
     for (int i = 0; i < resp.length; i++) {
       Job job = new Job.fromJSON(resp[i]);
