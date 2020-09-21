@@ -32,7 +32,7 @@ class SliverJobDetailHeader extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get minExtent => this.expandedHeight + this.paddingTop;
+  double get minExtent => this.collapsedHeight + this.paddingTop;
 
   @override
   double get maxExtent => this.expandedHeight;
