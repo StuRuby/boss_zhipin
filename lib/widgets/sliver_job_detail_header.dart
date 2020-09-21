@@ -56,7 +56,7 @@ class SliverJobDetailHeader extends SliverPersistentHeaderDelegate {
         children: <Widget>[
           Container(
             child: Image.network(
-              'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=423296832,903757654&fm=26&gp=0.jpg',
+              'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600713325637&di=0d0caae6f21a3e081a60f5c2678844a7&imgtype=0&src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F1011%2F11041G43207%2F1G104143207-1.jpg',
               fit: BoxFit.cover,
             ),
           ),
