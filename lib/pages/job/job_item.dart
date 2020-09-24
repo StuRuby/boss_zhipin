@@ -1,3 +1,5 @@
+import 'package:boss_zhipin/pages/job/job_detail.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:boss_zhipin/models/job.dart';
@@ -24,7 +26,8 @@ class _JobItem extends State<JobItem> {
         child: GestureDetector(
           onTap: () {
             try {
-              Navigator.pushNamed(context, 'job_detail');
+              Navigator.push(context,
+                  CupertinoPageRoute(builder: (context) => JobDetail()));
             } catch (e) {}
           },
           child: Column(

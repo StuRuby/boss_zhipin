@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './job_detail_title.dart';
+
 class SliverJobDetailHeader extends SliverPersistentHeaderDelegate {
   final double collapsedHeight;
   final double expandedHeight;
@@ -55,10 +57,7 @@ class SliverJobDetailHeader extends SliverPersistentHeaderDelegate {
         fit: StackFit.expand,
         children: <Widget>[
           Container(
-            child: Image.network(
-              'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600713325637&di=0d0caae6f21a3e081a60f5c2678844a7&imgtype=0&src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2F1011%2F11041G43207%2F1G104143207-1.jpg',
-              fit: BoxFit.cover,
-            ),
+            child: JobDetailTitle(),
           ),
           Positioned(
             left: 0,
@@ -71,7 +70,6 @@ class SliverJobDetailHeader extends SliverPersistentHeaderDelegate {
                 child: Container(
                   height: this.collapsedHeight,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       IconButton(
                         icon: Icon(
@@ -81,23 +79,40 @@ class SliverJobDetailHeader extends SliverPersistentHeaderDelegate {
                         ),
                         onPressed: () => Navigator.pop(context),
                       ),
-                      Text(
-                        this.title,
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w500,
-                          color: this
-                              ._getStickyHeaderTextColor(shrinkOffset, false),
+                      Expanded(
+                        flex: 1,
+                        child: Text(
+                          this.title,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w500,
+                            color: this
+                                ._getStickyHeaderTextColor(shrinkOffset, false),
+                          ),
                         ),
                       ),
                       IconButton(
                         icon: Icon(
-                          Icons.star,
-                          color: this
-                              ._getStickyHeaderTextColor(shrinkOffset, true),
+                          Icons.star_border,
+                          color: new Color.fromRGBO(52, 52, 52, 1),
                         ),
                         onPressed: () {},
-                      )
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.share,
+                          color: new Color.fromRGBO(52, 52, 52, 1),
+                        ),
+                        onPressed: () {},
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.report_problem,
+                          color: new Color.fromRGBO(52, 52, 52, 1),
+                        ),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
                 ),

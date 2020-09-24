@@ -17,9 +17,9 @@ class _JobDetail extends State<JobDetail> {
             SliverPersistentHeader(
               pinned: true,
               delegate: SliverJobDetailHeader(
-                title: 'web前端工程师',
+                title: '高级web前端工程师（急招）',
                 paddingTop: MediaQuery.of(context).padding.top,
-                expandedHeight: 300,
+                expandedHeight: 200,
                 collapsedHeight: 40,
               ),
             ),
