@@ -26,8 +26,12 @@ class _JobItem extends State<JobItem> {
         child: GestureDetector(
           onTap: () {
             try {
-              Navigator.push(context,
-                  CupertinoPageRoute(builder: (context) => JobDetail()));
+              Navigator.push(
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => new JobDetail(job: widget.job),
+                ),
+              );
             } catch (e) {}
           },
           child: Column(
@@ -38,9 +42,10 @@ class _JobItem extends State<JobItem> {
                   Text(
                     widget.job.title,
                     style: TextStyle(
-                        color: new Color.fromRGBO(45, 45, 45, 1),
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w700),
+                      color: new Color.fromRGBO(45, 45, 45, 1),
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                   Text(
                     widget.job.salary,

@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
+import 'package:boss_zhipin/models/job.dart';
 import './job_detail_title.dart';
 
 class SliverJobDetailHeader extends SliverPersistentHeaderDelegate {
   final double collapsedHeight;
   final double expandedHeight;
   final double paddingTop;
-  final String title;
+  final Job job;
 
   SliverJobDetailHeader({
     this.collapsedHeight,
     this.expandedHeight,
     this.paddingTop,
-    this.title,
+    this.job,
   });
 
   Color _getStickyHeaderBgColor(double shrinkOffset) {
@@ -57,7 +58,7 @@ class SliverJobDetailHeader extends SliverPersistentHeaderDelegate {
         fit: StackFit.expand,
         children: <Widget>[
           Container(
-            child: JobDetailTitle(),
+            child: new JobDetailTitle(job: this.job),
           ),
           Positioned(
             left: 0,
@@ -74,15 +75,14 @@ class SliverJobDetailHeader extends SliverPersistentHeaderDelegate {
                       IconButton(
                         icon: Icon(
                           Icons.arrow_back_ios,
-                          color: this
-                              ._getStickyHeaderTextColor(shrinkOffset, true),
+                          color: new Color.fromRGBO(52, 52, 52, 1),
                         ),
                         onPressed: () => Navigator.pop(context),
                       ),
                       Expanded(
                         flex: 1,
                         child: Text(
-                          this.title,
+                          this.job.title,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 20.0,

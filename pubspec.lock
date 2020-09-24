@@ -74,6 +74,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  lodash_dart:
+    dependency: "direct main"
+    description:
+      name: lodash_dart
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.7"
   matcher:
     dependency: transitive
     description:

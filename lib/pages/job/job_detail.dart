@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:boss_zhipin/models/job.dart';
 import 'package:boss_zhipin/widgets/sliver_job_detail_header.dart';
 
 class JobDetail extends StatefulWidget {
+  JobDetail({Key key, this.job}) : super(key: key);
+  final Job job;
+
   @override
   _JobDetail createState() => new _JobDetail();
 }
@@ -17,7 +21,7 @@ class _JobDetail extends State<JobDetail> {
             SliverPersistentHeader(
               pinned: true,
               delegate: SliverJobDetailHeader(
-                title: '高级web前端工程师（急招）',
+                job: widget.job,
                 paddingTop: MediaQuery.of(context).padding.top,
                 expandedHeight: 200,
                 collapsedHeight: 40,
