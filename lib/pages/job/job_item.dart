@@ -39,12 +39,16 @@ class _JobItem extends State<JobItem> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    widget.job.title,
-                    style: TextStyle(
-                      color: new Color.fromRGBO(45, 45, 45, 1),
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w700,
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      widget.job.title,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: new Color.fromRGBO(45, 45, 45, 1),
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                   Text(
