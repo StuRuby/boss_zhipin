@@ -1,3 +1,4 @@
+import 'package:boss_zhipin/widgets/job_detail_content.dart';
 import 'package:flutter/material.dart';
 
 import 'package:boss_zhipin/models/job.dart';
@@ -33,12 +34,12 @@ class _JobDetail extends State<JobDetail> {
                     (BuildContext context, int index) => Row(
                           children: <Widget>[
                             Expanded(
-                              child: JobPublisherIntro(),
+                              child: JobDetailContent(),
                               flex: 1,
-                            )
+                            ),
                           ],
                         ),
-                    childCount: 1)),
+                    childCount: 2)),
           ],
         ),
       ),
