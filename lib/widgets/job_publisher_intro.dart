@@ -7,6 +7,7 @@ class JobPublisherIntro extends StatelessWidget {
       color: Colors.white,
       padding: const EdgeInsets.all(24.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Expanded(
             child: Row(
@@ -18,28 +19,30 @@ class JobPublisherIntro extends StatelessWidget {
                 ),
                 Padding(padding: const EdgeInsets.only(left: 5.0, right: 5.0)),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text.rich(
-                      TextSpan(
-                          text: '高强',
+                    Row(
+                      children: <Widget>[
+                        Text('高强',
+                            style: TextStyle(
+                              color: new Color.fromRGBO(46, 46, 46, 1),
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w400,
+                            )),
+                        Padding(padding: const EdgeInsets.only(right: 6.0)),
+                        Text(
+                          '3日内活跃',
                           style: TextStyle(
-                            color: new Color.fromRGBO(46, 46, 46, 1),
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w400,
+                            color: new Color.fromRGBO(176, 176, 176, 1),
+                            fontSize: 12.0,
+                            fontWeight: FontWeight.w200,
                           ),
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: '3日内活跃',
-                              style: TextStyle(
-                                color: new Color.fromRGBO(176, 176, 176, 1),
-                                fontSize: 12.0,
-                                fontWeight: FontWeight.w200,
-                              ),
-                            )
-                          ]),
+                        ),
+                      ],
                     ),
                     Text(
-                      '科达科技*招聘者',
+                      '科达科技 · 招聘者',
                       style: TextStyle(
                         color: new Color.fromRGBO(46, 46, 46, 1),
                         fontSize: 15.0,
@@ -51,7 +54,7 @@ class JobPublisherIntro extends StatelessWidget {
               ],
             ),
           ),
-          IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {})
+          IconButton(icon: Icon(Icons.navigate_next), onPressed: () {})
         ],
       ),
     );
