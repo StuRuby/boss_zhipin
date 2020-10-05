@@ -1,16 +1,48 @@
 import 'package:flutter/material.dart';
 
+import 'package:boss_zhipin/models/job.dart';
+import './job_tag.dart';
+
 class JobDetailContent extends StatelessWidget {
+  JobDetailContent({Key key, this.job}) : super(key: key);
+  final Job job;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       padding: const EdgeInsets.all(24.0),
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Expanded(
-            child: Text('''
-          岗位描述：
+          Row(
+            children: [
+              Text(
+                '职位详情',
+                style: TextStyle(
+                  color: new Color.fromRGBO(45, 45, 45, 1),
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: List<Widget>.generate(
+              this.job.tags.length,
+              (index) => Container(
+                margin: const EdgeInsets.only(right: 8.0),
+                child: JobTag(text: this.job.tags[index]),
+              ),
+            ),
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Text('''
+岗位描述：
 1）负责阿里商旅相关业务的多端页面开发、上线、维护工作
 2）参与前端技术架构设计，承担核心模块的代码编写
 3）保障业务性能与稳定性，分析各类数据，识别并解决瓶颈问题
@@ -24,8 +56,10 @@ class JobDetailContent extends StatelessWidget {
 5）对前端技术有持续热情，具备良好的团队协作精神，个性乐观开朗，善于与各种不同背景角色合作
 6）具备跨终端前端开发能力、具备客户端开发能力、有高质量开源项目、具备数据分析技能者优先
           '''),
-            flex: 1,
-          ),
+                flex: 1,
+              ),
+            ],
+          )
         ],
       ),
     );
