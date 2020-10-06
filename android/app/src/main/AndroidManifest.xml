@@ -43,5 +43,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <meta-data android:name="com.mapbox.token" android:value="pk.eyJ1IjoiZWR5ZGF0YSIsImEiOiJjajZobmwzdzcwYjMxMzJteTd2Y3A0MGVyIn0.kw8CoNgHKeywtca6JlK2UA" />
+
     </application>
 </manifest>
