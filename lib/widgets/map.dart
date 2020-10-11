@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map_marker_popup/flutter_map_marker_popup.dart';
 import 'package:latlong/latlong.dart';
+
+import 'package:boss_zhipin/widgets/map_popup.dart';
 
 class Map extends StatelessWidget {
   @override
@@ -14,26 +17,34 @@ class Map extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             child: FlutterMap(
               options: new MapOptions(
-                center: new LatLng(30.5, 120.09),
+                center: new LatLng(31.299305, 120.531441),
                 zoom: 13.0,
+                interactive: false,
+                plugins: [PopupMarkerPlugin()],
               ),
               layers: [
                 new TileLayerOptions(
                     urlTemplate:
-                        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                    subdomains: ['a', 'b', 'c']),
-                new MarkerLayerOptions(
+                        'http://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
+                    subdomains: ['1', '2', '3', '4']),
+                PopupMarkerLayerOptions(
                   markers: [
-                    new Marker(
-                      width: 80.0,
-                      height: 80.0,
-                      point: new LatLng(30.5, 120.09),
-                      builder: (ctx) => new Container(
-                        child: new FlutterLogo(),
+                    Marker(
+                      point: new LatLng(31.299305, 120.531441),
+                      width: 40.0,
+                      height: 40.0,
+                      builder: (_) => Icon(
+                        Icons.location_on,
+                        color: Colors.blue,
+                        size: 40.0,
                       ),
-                    ),
+                    )
                   ],
-                ),
+                  popupSnap: PopupSnap.top,
+                  popupController: PopupController(),
+                  popupBuilder: (BuildContext context, Marker marker) =>
+                      MapPopup(),
+                )
               ],
             ),
           ),
