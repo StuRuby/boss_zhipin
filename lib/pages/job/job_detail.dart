@@ -1,6 +1,7 @@
-import 'package:boss_zhipin/widgets/job_detail_content.dart';
 import 'package:flutter/material.dart';
 
+import 'package:boss_zhipin/widgets/job_detail_content.dart';
+import 'package:boss_zhipin/widgets/company_desc_intro.dart';
 import 'package:boss_zhipin/models/job.dart';
 import 'package:boss_zhipin/widgets/sliver_job_detail_header.dart';
 import 'package:boss_zhipin/widgets/job_publisher_intro.dart';
