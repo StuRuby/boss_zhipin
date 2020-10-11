@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:boss_zhipin/models/job.dart';
 import 'package:boss_zhipin/widgets/sliver_job_detail_header.dart';
 import 'package:boss_zhipin/widgets/job_publisher_intro.dart';
+import 'package:boss_zhipin/widgets/company_desc_intro.dart';
 
 class JobDetail extends StatefulWidget {
   JobDetail({Key key, this.job}) : super(key: key);
@@ -34,12 +35,20 @@ class _JobDetail extends State<JobDetail> {
                     (BuildContext context, int index) => Row(
                           children: <Widget>[
                             Expanded(
-                              child: JobDetailContent(),
+                              child: Column(
+                                children: [
+                                  JobPublisherIntro(),
+                                  JobDetailContent(
+                                    job: widget.job,
+                                  ),
+                                  CompanyDescIntro(),
+                                ],
+                              ),
                               flex: 1,
                             ),
                           ],
                         ),
-                    childCount: 2)),
+                    childCount: 1)),
           ],
         ),
       ),
