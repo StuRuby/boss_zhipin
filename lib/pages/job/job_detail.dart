@@ -43,7 +43,7 @@ class _JobDetail extends State<JobDetail> {
                                     job: widget.job,
                                   ),
                                   CompanyDescIntro(),
-                                  Map(),
+                                  new Map(),
                                 ],
                               ),
                               flex: 1,
@@ -52,6 +52,20 @@ class _JobDetail extends State<JobDetail> {
                         ),
                     childCount: 1)),
           ],
+        ),
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.only(
+            left: 24.0,
+            right: 24.0,
+            top: 8.0,
+            bottom: 8.0,
+          ),
+          child: RaisedButton(
+            color: new Color.fromRGBO(17, 164, 160, 1),
+            textColor: Colors.white,
+            child: Text('立即沟通'),
+            onPressed: () {},
+          ),
         ),
       ),
     );

@@ -7,13 +7,7 @@ class MapPopup extends StatelessWidget {
       child: InkWell(
         child: Row(
           mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            // Padding(
-            //   padding: EdgeInsets.only(left: 20.0, right: 10.0),
-            //   child: Icon(Icons.star),
-            // ),
-            _cardDesc(context)
-          ],
+          children: <Widget>[_cardDesc(context)],
         ),
       ),
     );
