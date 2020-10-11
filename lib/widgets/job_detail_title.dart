@@ -17,6 +17,7 @@ class JobDetailTitle extends StatelessWidget {
           Positioned(
             left: 15.0,
             right: 15.0,
+            top: 50.0,
             bottom: 50,
             child: Row(
               children: <Widget>[

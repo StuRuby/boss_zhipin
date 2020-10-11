@@ -27,7 +27,7 @@ class _JobDetail extends State<JobDetail> {
               delegate: SliverJobDetailHeader(
                 job: widget.job,
                 paddingTop: MediaQuery.of(context).padding.top,
-                expandedHeight: 150,
+                expandedHeight: 160,
                 collapsedHeight: 40,
               ),
             ),
